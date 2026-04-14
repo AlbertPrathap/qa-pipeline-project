@@ -27,3 +27,7 @@ jobs:
 
       - name: Run Completed
         run: echo "Test Run Completed"
+
+      - name: Run only on success
+        if: success()
+        run: echo "Everything Passed"

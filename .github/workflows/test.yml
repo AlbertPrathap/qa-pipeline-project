@@ -19,7 +19,7 @@ jobs:
 
       - name: Check folder
         run: ./check_folder.sh random
-        continue-on-error: true
+        continue-on-error: false
 
       - name: Handle Failures
         if: failure()

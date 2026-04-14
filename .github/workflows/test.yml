@@ -1,0 +1,21 @@
+name: Run Shell Scripts
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup
+        run: |
+          chmod +x *.sh
+          mkdir test1
+
+      - name: Run env script
+        run: ./run_env.sh qa
+
+      - name: Check folder
+        run: ./check_folder.sh test1

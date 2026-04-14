@@ -19,3 +19,7 @@ jobs:
 
       - name: Check folder
         run: ./check_folder.sh random
+
+      - name: Handle Failures
+        if: failure()
+        run: echo "Previous Step Failed"

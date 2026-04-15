@@ -25,9 +25,11 @@ jobs:
         run: |
           echo "Running tests..."
           mkdir -p target/surefire-reports
-          echo "Test Passed" > target/surefire-reports/result.txt
+          echo "Test Failed" > target/surefire-reports/result.txt
+          exit 1
 
       - name: Upload Reports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-report
